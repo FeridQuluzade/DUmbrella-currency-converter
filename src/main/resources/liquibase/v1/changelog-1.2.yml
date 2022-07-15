@@ -1,0 +1,45 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create Users Role Table
+      author: FD
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  name: user_id
+                  type: bigint
+                  constraints:
+                    nullable: true
+              - column:
+                  name: role_id
+                  type: int
+                  constraints:
+                    nullable: true
+              - column:
+                  name: created_at
+                  type: timestamp
+                  defaultValueDate: current_timestamp
+                  constraints:
+                    nullable: false
+                    updatable: false
+              - column:
+                  name: updated_at
+                  type: timestamp
+            schemaName: public
+            tableName: user_roles
+        - addForeignKeyConstraint:
+            constraintName: fk_role
+            baseTableSchemaName: public
+            baseTableName: user_roles
+            baseColumnNames: role_id
+            referencedTableSchemaName: public
+            referencedTableName: roles
+            referencedColumnNames: id
+        - addForeignKeyConstraint:
+            constraintName: fk_user
+            baseTableSchemaName: public
+            baseTableName: user_roles
+            baseColumnNames: user_id
+            referencedTableSchemaName: public
+            referencedTableName: users
+            referencedColumnNames: id

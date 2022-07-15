@@ -1,9 +1,5 @@
 package az.digitalUmbrella.dev.currency.error;
 
-import az.digitalUmbrella.dev.currency.error.ErrorLevel;
-import az.digitalUmbrella.dev.currency.error.RestErrorResponse;
-import az.digitalUmbrella.dev.currency.error.ServiceException;
-import az.digitalUmbrella.dev.currency.error.ValidationError;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
