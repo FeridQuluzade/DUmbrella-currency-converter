@@ -1,6 +1,6 @@
 package az.digitalUmbrella.dev.currency.service;
 
-import az.digitalUmbrella.dev.currency.config.TokenProvider;
+import az.digitalUmbrella.dev.currency.security.TokenProvider;
 import az.digitalUmbrella.dev.currency.dto.request.LoginRequest;
 import az.digitalUmbrella.dev.currency.dto.response.AuthTokenResponse;
 import az.digitalUmbrella.dev.currency.error.ServiceException;

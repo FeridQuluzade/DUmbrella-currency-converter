@@ -1,5 +1,8 @@
 package az.digitalUmbrella.dev.currency.config;
 
+import az.digitalUmbrella.dev.currency.security.JwtAuthenticationFilter;
+import az.digitalUmbrella.dev.currency.security.PasswordEncoder;
+import az.digitalUmbrella.dev.currency.security.UnauthorizedEntryPoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
