@@ -14,3 +14,8 @@ spring:
   liquibase:
     change-log: classpath:liquibase/changelog-master.yml
     enabled: true
+
+client:
+  cbar:
+    url: https://www.cbar.az/currencies/
+    type: xml

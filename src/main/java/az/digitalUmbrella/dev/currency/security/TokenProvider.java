@@ -1,4 +1,4 @@
-package az.digitalUmbrella.dev.currency.config;
+package az.digitalUmbrella.dev.currency.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;

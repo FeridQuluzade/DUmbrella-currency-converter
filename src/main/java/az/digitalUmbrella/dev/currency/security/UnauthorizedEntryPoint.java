@@ -1,4 +1,4 @@
-package az.digitalUmbrella.dev.currency.config;
+package az.digitalUmbrella.dev.currency.security;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
