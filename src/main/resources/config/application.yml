@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: currency-converter
+  messages:
+    encoding: UTF-8
+    basename: i18n/messages
