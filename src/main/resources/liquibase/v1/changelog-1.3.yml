@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create Currency Curs Table
+      author: Quluzade Ferid
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: true
+                    primaryKeyName: pk_valcurs
+              - column:
+                  name: refresh_date
+                  type: date
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamp
+                  defaultValueDate: current_timestamp
+                  constraints:
+                    nullable: false
+                    updatable: false
+              - column:
+                  name: updated_at
+                  type: timestamp
+            tableName: currency_curs
+            schemaName: public

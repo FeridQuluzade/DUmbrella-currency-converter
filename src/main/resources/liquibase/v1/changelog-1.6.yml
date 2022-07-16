@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create index refresh date in currency curs table
+      author: Ferid Quluzade
+      changes:
+        - createIndex:
+            clustered: true
+            columns:
+              - column:
+                  descending: true
+                  name: refresh_date
+            indexName: idx_refresh_date
+            schemaName: public
+            tableName: currency_curs
+            unique: true

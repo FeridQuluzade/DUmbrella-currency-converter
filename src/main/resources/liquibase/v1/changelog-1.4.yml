@@ -1,0 +1,37 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create Currency Detail Table
+      author: Quluzade Ferid
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    nullable: true
+                    primaryKey: true
+                    unique: true
+              - column:
+                  name: type
+                  type: varchar(50)
+              - column:
+                  name: currency_curs_id
+                  type: bigint
+                  constraints:
+                    nullable: true
+                    foreignKeyName: fk_currency_curs_id
+                    references: currency_curs(id)
+              - column:
+                  name: created_at
+                  type: timestamp
+                  defaultValueDate: current_timestamp
+                  constraints:
+                    nullable: false
+                    updatable: false
+              - column:
+                  name: updated_at
+                  type: timestamp
+            schemaName: public
+            tableName: currency_detail
