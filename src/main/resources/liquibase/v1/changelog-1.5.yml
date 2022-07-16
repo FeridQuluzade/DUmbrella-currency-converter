@@ -1,0 +1,46 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create Currency Table
+      author: Quluzade Ferid
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    nullable: true
+                    primaryKey: true
+                    unique: true
+              - column:
+                  name: code
+                  type: varchar(100)
+              - column:
+                  name: nominal
+                  type: varchar(100)
+              - column:
+                  name: name
+                  type: varchar(100)
+              - column:
+                  name: value
+                  type: number
+              - column:
+                  name: currency_detail_id
+                  type: bigint
+                  constraints:
+                    nullable: true
+                    foreignKeyName: fk_currency_detail_id
+                    references: currency_detail(id)
+              - column:
+                  name: created_at
+                  type: timestamp
+                  defaultValueDate: current_timestamp
+                  constraints:
+                    nullable: false
+                    updatable: false
+              - column:
+                  name: updated_at
+                  type: timestamp
+            schemaName: public
+            tableName: currency

@@ -3,6 +3,7 @@ package az.digitalUmbrella.dev.currency.error;
 public enum ErrorCodes implements ErrorCode {
 
     INVALID_USERNAME_OR_PASSWORD,
+    CURRENCY_CURS_NOT_FOUND,
     CLIENT_ERROR,
     ALREADY_TAKEN,
     USER_NOT_FOUND;
