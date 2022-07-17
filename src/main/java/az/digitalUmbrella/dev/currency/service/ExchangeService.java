@@ -7,6 +7,7 @@ import az.digitalUmbrella.dev.currency.dto.response.CurrencyResponse;
 import az.digitalUmbrella.dev.currency.dto.response.ExchangeResponse;
 import az.digitalUmbrella.dev.currency.error.ServiceException;
 import az.digitalUmbrella.dev.currency.mapper.ExchangeMapper;
+import az.digitalUmbrella.dev.currency.repository.CurrencyRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +25,10 @@ public class ExchangeService {
 
     public ExchangeResponse getAllByDate(LocalDate date) {
         return ExchangeResponse.of(findAllByDate(date));
+    }
+
+    public ExchangeResponse getAllByCode(String to) {
+        return ExchangeResponse.of(exchangeMapper.toExchanges(currencyService.getAllByCode(to)));
     }
 
     public ExchangeDto getByDateAndCode(ExchangeSearchFilter filter) {

@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "findAllCurrencies",
+			"name": "getAll",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -22,7 +22,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/currencies/date/2022-07-10",
+					"raw": "http://localhost:8080/currencies/date/2022-07-09",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -31,7 +31,69 @@
 					"path": [
 						"currencies",
 						"date",
-						"2022-07-10"
+						"2022-07-09"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteAllByDate",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmZXJpZCIsInJvbGVzIjoiUk9MRV9BRE1JTiIsImlhdCI6MTY1ODA0NTQyOCwiZXhwIjoxNjU4MDYzNDI4fQ.V7mJpIAuZUngojWFNbhazzz65l1o4i6Gmct9qHmL0UY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/currencies/date/2022-07-09",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"currencies",
+						"date",
+						"2022-07-09"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllByCode",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmZXJpZCIsInJvbGVzIjoiUk9MRV9BRE1JTiIsImlhdCI6MTY1ODA0NTQyOCwiZXhwIjoxNjU4MDYzNDI4fQ.V7mJpIAuZUngojWFNbhazzz65l1o4i6Gmct9qHmL0UY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/exchange/to/USD",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exchange",
+						"to",
+						"USD"
 					]
 				}
 			},
@@ -84,7 +146,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/exchange?date=2022-07-08&to=USD",
+					"raw": "http://localhost:8080/exchange?date=2022-07-08&to=usd",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -100,7 +162,7 @@
 						},
 						{
 							"key": "to",
-							"value": "USD"
+							"value": "usd"
 						}
 					]
 				}
@@ -110,16 +172,58 @@
 		{
 			"name": "register-user",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"ferid\",\n    \"password\": \"ferid123Q\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"register"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "login-user",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"ferid\",\n    \"password\": \"ferid123Q\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
 			},
 			"response": []
 		}
