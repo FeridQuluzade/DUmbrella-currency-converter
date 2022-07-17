@@ -17,10 +17,10 @@ public class ExchangeSearchFilter {
     private LocalDate date;
 
     @Currency
-    private String to;
+    private String from;
 
-    public void setTo(String to) {
-        this.to = to.toUpperCase();
+    public void setFrom(String from) {
+        this.from = from.toUpperCase();
     }
 
 }

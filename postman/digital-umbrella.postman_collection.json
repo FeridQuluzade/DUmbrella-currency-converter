@@ -84,7 +84,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/exchange/to/USD",
+					"raw": "http://localhost:8080/exchange/from/USD",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -92,7 +92,7 @@
 					"port": "8080",
 					"path": [
 						"exchange",
-						"to",
+						"from",
 						"USD"
 					]
 				}
@@ -146,7 +146,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/exchange?date=2022-07-08&to=usd",
+					"raw": "http://localhost:8080/exchange?date=2022-07-08&from=usd",
 					"protocol": "http",
 					"host": [
 						"localhost"

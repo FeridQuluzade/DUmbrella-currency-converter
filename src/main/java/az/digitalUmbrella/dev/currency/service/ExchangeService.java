@@ -7,7 +7,6 @@ import az.digitalUmbrella.dev.currency.dto.response.CurrencyResponse;
 import az.digitalUmbrella.dev.currency.dto.response.ExchangeResponse;
 import az.digitalUmbrella.dev.currency.error.ServiceException;
 import az.digitalUmbrella.dev.currency.mapper.ExchangeMapper;
-import az.digitalUmbrella.dev.currency.repository.CurrencyRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -27,19 +26,19 @@ public class ExchangeService {
         return ExchangeResponse.of(findAllByDate(date));
     }
 
-    public ExchangeResponse getAllByCode(String to) {
-        return ExchangeResponse.of(exchangeMapper.toExchanges(currencyService.getAllByCode(to)));
+    public ExchangeResponse getAllByCode(String from) {
+        return ExchangeResponse.of(exchangeMapper.toExchanges(currencyService.getAllByCode(from)));
     }
 
     public ExchangeDto getByDateAndCode(ExchangeSearchFilter filter) {
         List<ExchangeDto> exchanges = findAllByDate(filter.getDate());
         return exchanges.stream()
-                .filter(exchangeDto -> filter.getTo().equals(exchangeDto.getCode()))
+                .filter(exchangeDto -> filter.getFrom().equals(exchangeDto.getCode()))
                 .findFirst()
                 .orElseThrow(
                         () -> ServiceException.of(
                                 UNSUPPORTED_CURRENCY,
-                                "not support this currency: " + filter.getTo()));
+                                "not support this currency: " + filter.getFrom()));
     }
 
     private List<ExchangeDto> findAllByDate(LocalDate date) {

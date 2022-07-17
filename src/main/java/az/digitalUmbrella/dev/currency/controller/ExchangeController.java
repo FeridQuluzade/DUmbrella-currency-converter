@@ -31,9 +31,9 @@ public class ExchangeController {
         return exchangeService.getAllByDate(date);
     }
 
-    @GetMapping("/to/{to}")
-    public ExchangeResponse getAllByCode(@Currency @PathVariable String to) {
-        return exchangeService.getAllByCode(to);
+    @GetMapping("/from/{from}")
+    public ExchangeResponse getAllByCode(@Currency @PathVariable String from) {
+        return exchangeService.getAllByCode(from);
     }
 
     @GetMapping
