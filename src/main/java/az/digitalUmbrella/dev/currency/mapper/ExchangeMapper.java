@@ -1,6 +1,5 @@
 package az.digitalUmbrella.dev.currency.mapper;
 
-
 import az.digitalUmbrella.dev.currency.dto.CurrencyDetailDto;
 import az.digitalUmbrella.dev.currency.dto.CurrencyDto;
 import az.digitalUmbrella.dev.currency.dto.ExchangeDto;
@@ -20,9 +19,9 @@ public interface ExchangeMapper {
     @IterableMapping(nullValueMappingStrategy = NullValueMappingStrategy.RETURN_DEFAULT)
     List<ExchangeDto> toExchanges(List<CurrencyDto> currencies);
 
-    default List<ExchangeDto> toExchangesFromCurrencyDetail(List<CurrencyDetailDto> currencyDetails) {
+    default List<ExchangeDto> toExchangesFromCurrencyDetail(List<CurrencyDetailDto> currencies) {
         List<ExchangeDto> exchangeDtoList = new ArrayList<>();
-        for (CurrencyDetailDto currencyDetail : currencyDetails) {
+        for (CurrencyDetailDto currencyDetail : currencies) {
             exchangeDtoList.addAll(toExchanges(currencyDetail.getCurrencies()));
         }
         return exchangeDtoList;
